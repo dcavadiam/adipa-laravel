@@ -348,6 +348,110 @@
   border-color: #704efd;
   box-shadow: 0 2px 8px rgba(112,78,253,0.3);
 }
+.contact {
+  margin-bottom: 3rem;
+  padding: 0 20px;
+}
+.contact__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #3a3f5a;
+  color: #fff;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(3,27,78,0.15);
+}
+.contact__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.contact__success {
+  display: none;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #22c55e;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+.contact__success.is-visible {
+  display: block;
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.contact__label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.contact__input {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+.contact__input:focus {
+  border-color: #704efd;
+  box-shadow: 0 0 0 2px rgba(112,78,253,0.2);
+}
+.contact__input--textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.contact__input--error {
+  border-color: #ef4444;
+}
+.contact__error {
+  display: none;
+  color: #ef4444;
+  font-size: 0.8rem;
+}
+.contact__error.is-visible {
+  display: block;
+}
+.contact__btn {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: 0.375rem;
+  background: #2cb7ff;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.contact__btn:hover {
+  background: rgba(44,183,255,0.8);
+}
+@media (min-width: 768px) {
+  .contact__row {
+    flex-direction: row;
+  }
+}
 .badge {
   position: absolute;
   top: 1rem;

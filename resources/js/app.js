@@ -43,3 +43,57 @@ $(document).ready(function () {
     });
 
 });
+
+// Validación del formulario
+$('#contact-form').on('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    // Limpiar errores previos
+    $('.contact__input').removeClass('contact__input--error');
+    $('.contact__error').removeClass('is-visible').text('');
+    $('#form-success').removeClass('is-visible');
+
+    // Validar nombre
+    const name = $('#name').val().trim();
+    if (name.length === 0) {
+        showError('name', 'El nombre es requerido');
+        isValid = false;
+    } else if (name.length < 2) {
+        showError('name', 'El nombre debe tener al menos 2 caracteres');
+        isValid = false;
+    }
+
+    // Validar email
+    const email = $('#email').val().trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.length === 0) {
+        showError('email', 'El email es requerido');
+        isValid = false;
+    } else if (!emailRegex.test(email)) {
+        showError('email', 'El email no es válido');
+        isValid = false;
+    }
+
+    // Validar mensaje
+    const message = $('#message').val().trim();
+    if (message.length === 0) {
+        showError('message', 'El mensaje es requerido');
+        isValid = false;
+    } else if (message.length < 10) {
+        showError('message', 'El mensaje debe tener al menos 10 caracteres');
+        isValid = false;
+    }
+
+    // Si todo es válido mostrar éxito
+    if (isValid) {
+        $('#form-success').addClass('is-visible');
+        $('#contact-form')[0].reset();
+    }
+});
+
+function showError(field, message) {
+    $('#' + field).addClass('contact__input--error');
+    $('#' + field + '-error').addClass('is-visible').text(message);
+}

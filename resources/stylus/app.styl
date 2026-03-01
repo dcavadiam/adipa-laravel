@@ -1,0 +1,22 @@
+@require '_variables'
+@require '_header'
+@require '_hero'
+@require '_cards'
+@require '_filters'
+@require '_form'
+@require '_footer'
+
+*,
+*::before,
+*::after
+    margin 0
+    padding 0
+    box-sizing border-box
+
+body
+    font-family $font-body
+    color $dark
+    background $light-bg-2
+
+h1, h2, h3, h4, h5, h6, button
+    font-family $font-heading

@@ -1,0 +1,126 @@
+.header
+    background $white
+    box-shadow 0 2px 8px rgba(3, 27, 78, 0.08)
+    position sticky
+    top 0
+    z-index 100
+
+    &__container
+        max-width $container-max-width
+        margin 0 auto
+        padding 0 $padding-global
+        height 70px
+        display flex
+        align-items center
+        justify-content space-between
+
+    &__logo-img
+        height 40px
+        width auto
+
+    &__nav
+        display none
+        gap 1.5rem
+
+    &__nav-link
+        text-decoration none
+        color $dark
+        font-family $font-heading
+        font-size 0.95rem
+        font-weight 600
+        transition color 0.3s ease
+        cursor pointer
+
+        &:hover
+            color $primary
+
+        &--active
+            color $primary
+
+    &__actions
+        display flex
+        align-items center
+        gap 0.75rem
+
+    &__btn-login
+        display none
+        background $primary
+        color $white
+        font-family $font-heading
+        font-weight 600
+        font-size 0.9rem
+        padding 0.5rem 1.25rem
+        border-radius $radius-button
+        border none
+        cursor pointer
+        transition background 0.3s ease
+
+        &:hover
+            background rgba(112, 78, 253, 0.8)
+
+    &__hamburger
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        gap 6px
+        background none
+        border none
+        cursor pointer
+        width 36px
+        height 36px
+        color $primary
+
+        span
+            display block
+            width 24px
+            height 2px
+            background $primary
+            border-radius 2px
+            transition all 0.3s ease
+
+    &__overlay
+        display none
+        position fixed
+        inset 0
+        background rgba(0, 0, 0, 0.4)
+        z-index 40
+
+        &.is-open
+            display block
+
+    &__nav-mobile
+        position fixed
+        top 0
+        right -100%
+        width 280px
+        height 100vh
+        background $white
+        z-index 50
+        display flex
+        flex-direction column
+        gap 1.5rem
+        padding 2rem $padding-global
+        transition right 0.3s ease
+        box-shadow -4px 0 20px rgba(3, 27, 78, 0.1)
+
+        &.is-open
+            right 0
+
+    &__nav-mobile-close
+        background none
+        border none
+        font-size 1.25rem
+        color $dark
+        cursor pointer
+        align-self flex-end
+
+@media (min-width: 1280px)
+    .header__nav
+        display flex
+
+    .header__btn-login
+        display block
+
+    .header__hamburger
+        display none

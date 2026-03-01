@@ -1,0 +1,92 @@
+.footer
+    background $dark
+    color $white
+    font-family $font-heading
+    padding 2rem $padding-global
+
+    &__container
+        max-width $container-max-width
+        margin 0 auto
+        display flex
+        flex-direction column
+        align-items center
+        gap 1.5rem
+
+    &__brand
+        display flex
+        flex-direction column
+        align-items center
+        gap 0.5rem
+
+    &__logo
+        height 40px
+        width auto
+
+    &__copy
+        font-size 0.875rem
+        font-family $font-body
+        color rgba(255, 255, 255, 0.7)
+
+    &__nav
+        list-style none
+        display flex
+        flex-direction column
+        align-items center
+        gap 0.5rem
+
+    &__nav-link
+        color rgba(255, 255, 255, 0.8)
+        text-decoration none
+        font-size 0.95rem
+        transition color 0.2s ease
+
+        &:hover
+            color $white
+
+    &__social
+        display flex
+        flex-direction column
+        align-items center
+        gap 0.75rem
+
+    &__social-title
+        font-size 0.9rem
+        color rgba(255, 255, 255, 0.8)
+
+    &__social-links
+        display flex
+        gap 0.75rem
+
+    &__social-link
+        display flex
+        align-items center
+        justify-content center
+        background $white
+        color $dark
+        width 36px
+        height 36px
+        border-radius 9999px
+        padding 0.5rem
+        transition all 0.2s ease
+
+        &:hover .footer__social-icon
+            transform scale(1.15)
+
+    &__social-icon
+        transition transform 0.1s ease
+
+@media (min-width: 1280px)
+    .footer__container
+        flex-direction row
+        justify-content space-between
+        align-items center
+
+    .footer__brand
+        align-items flex-start
+
+    .footer__nav
+        flex-direction row
+        gap 1.5rem
+
+    .footer__social
+        align-items flex-start

@@ -1,0 +1,125 @@
+.catalog
+
+    &__container
+        max-width $container-max-width
+        margin 0 auto
+        padding 4rem $padding-global
+
+    &__title
+        font-size 1.5rem
+        font-weight 700
+        color $primary
+        margin-bottom 1.5rem
+
+    &__filters
+        display flex
+        flex-wrap wrap
+        gap 0.5rem
+        margin-bottom 2rem
+
+    &__grid
+        display grid
+        grid-template-columns 1fr
+        gap 1rem
+
+.course-card
+    background $white
+    border-radius $radius-card
+    box-shadow $shadow-card
+    transition all 0.3s ease
+    position relative
+
+    &:hover
+        box-shadow $shadow-card-hover
+        transform translateY(-4px)
+
+    &__date-icon
+        width 20px
+        height 20px
+        stroke $primary
+
+    &__image-wrap
+        position relative
+
+    &__image
+        width 100%
+        height 192px
+        object-fit cover
+        border-radius $radius-card $radius-card 0 0
+
+    &__body
+        padding 1rem 1rem 1.5rem
+        display flex
+        flex-direction column
+        gap 0.5rem
+        min-height 320px
+        justify-content space-between
+
+    &__info
+        display flex
+        flex-direction column
+        gap 0.5rem
+
+    &__title
+        font-size 1.1rem
+        font-weight 700
+        color $dark
+
+    &__instructor
+        color #4b5563
+        font-family $font-body
+        font-size 0.9rem
+
+    &__date
+        display flex
+        align-items center
+        gap 0.5rem
+        font-family $font-body
+        font-size 0.9rem
+        margin-bottom 0.5rem
+
+    &__price
+        font-size 1.75rem
+        font-weight 700
+        color $dark
+
+    &__original-price
+        display flex
+        align-items center
+        gap 0.5rem
+
+    &__price-strike
+        color #9ca3af
+        font-size 1rem
+        text-decoration line-through
+
+    &__savings
+        font-size 0.8rem
+        background rgba(112, 78, 253, 0.1)
+        color $primary
+        padding 0.25rem 0.5rem
+        border-radius 6px
+
+    &__btn
+        background $primary
+        color $white
+        padding 0.625rem 1rem
+        border-radius $radius-button
+        border none
+        cursor pointer
+        font-weight 600
+        font-size 0.95rem
+        box-shadow 0 4px 12px rgba(0,0,0,0.1)
+        transition all 0.2s ease
+        width 100%
+
+        &:hover
+            background $secondary
+
+@media (min-width: 768px)
+    .catalog__grid
+        grid-template-columns repeat(2, 1fr)
+
+@media (min-width: 1280px)
+    .catalog__grid
+        grid-template-columns repeat(3, 1fr)
